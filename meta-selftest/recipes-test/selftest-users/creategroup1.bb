@@ -3,7 +3,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 LICENSE = "MIT"
 
-DEPENDS:append = "coreutils-native"
+DEPENDS = "coreutils-native"
 
 S = "${WORKDIR}"
 
@@ -22,7 +22,7 @@ do_install() {
 	ln -s ./file ${TESTDIR}/symlink
 	install -d   ${TESTDIR}/fifotest
 	mkfifo       ${TESTDIR}/fifotest/fifo
-    which chown
+
 	chown    gt1:grouptest ${TESTDIR}/file
 	chown -R gt1:grouptest ${TESTDIR}/dir
 	chown -h gt1:grouptest ${TESTDIR}/symlink

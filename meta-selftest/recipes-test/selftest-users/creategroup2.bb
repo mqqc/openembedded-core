@@ -3,7 +3,8 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 LICENSE = "MIT"
 
-DEPENDS:append = "coreutils-native creategroup1"
+DEPENDS = "coreutils-native"
+USERADD_DEPENDS = "creategroup1"
 
 S = "${WORKDIR}"
 
