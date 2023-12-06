@@ -26,7 +26,7 @@ toolchain_create_sdk_env_script () {
 	sdkpathnative=${7:-${SDKPATHNATIVE}}
 	prefix=${6:-${prefix_nativesdk}}
 	bindir=${5:-${bindir_nativesdk}}
-	libdir=${4:-${libdir}}
+	libdir=${4:-${libdir_nativesdk}}
 	sysroot=${3:-${SDKTARGETSYSROOT}}
 	multimach_target_sys=${2:-${REAL_MULTIMACH_TARGET_SYS}}
 	script=${1:-${SDK_OUTPUT}/${SDKPATH}/environment-setup-$multimach_target_sys}
@@ -95,8 +95,8 @@ toolchain_create_tree_env_script () {
 
 	cat >> $script <<EOF
 
-if [ -d "\$OECORE_NATIVE_SYSROOT/${datadir}/post-relocate-setup.d/" ]; then
-	for s in \$OECORE_NATIVE_SYSROOT/${datadir}/post-relocate-setup.d/*; do
+if [ -d "\$OECORE_NATIVE_SYSROOT/${datadir_native}/post-relocate-setup.d/" ]; then
+	for s in \$OECORE_NATIVE_SYSROOT/${datadir_native}/post-relocate-setup.d/*; do
 		if [ ! -x \$s ]; then
 			continue
 		fi
