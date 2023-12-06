@@ -28,7 +28,7 @@ ROOTFS_POSTPROCESS_COMMAND:append = " set_user_group"
 # Image level user / group settings
 set_user_group () {
 	user_group_settings="${EXTRA_USERS_PARAMS}"
-	export PSEUDO="${FAKEROOTENV} ${STAGING_DIR_NATIVE}${bindir}/pseudo"
+	export PSEUDO="${FAKEROOTENV} ${STAGING_BINDIR_NATIVE}/pseudo"
 	setting=`echo $user_group_settings | cut -d ';' -f1`
 	remaining=`echo $user_group_settings | cut -d ';' -f2-`
 	while test "x$setting" != "x"; do
