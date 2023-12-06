@@ -11,7 +11,7 @@ PACKAGE_WRITE_DEPS += "gconf-native"
 # the sysroot.  TODO: replicate the postinst logic for -native packages going
 # into sysroot as they won't be running their own install-time schema
 # registration (disabled below) nor the postinst script (as they don't happen).
-export GCONF_SCHEMA_INSTALL_SOURCE = "xml:merged:${STAGING_DIR_NATIVE}${sysconfdir}/gconf/gconf.xml.defaults"
+export GCONF_SCHEMA_INSTALL_SOURCE = "xml:merged:${STAGING_ETCDIR_NATIVE}/gconf/gconf.xml.defaults"
 export GCONF_BACKEND_DIR = "${STAGING_LIBDIR_NATIVE}/GConf/2"
 
 # Disable install-time schema registration as we're a packaging system so this
